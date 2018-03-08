@@ -20,7 +20,7 @@ int main() {
 
     // Sets elevator in defined floor
     if (elevGetFloorSensor() == -1) {
-        elevSetMotorDir(DIRN_UP);
+        elevSetMotorDir(DIRECTION_UP);
     }
 
     bool initialized = false;
@@ -65,7 +65,7 @@ int main() {
 void reInitializeElev() {
     hwInterfaceSetCurrentFloor(elevGetFloorSensor());
     hwInterfaceSetNextFloor(hwInterfaceGetCurrentFloor());
-    hwInterfaceSetLastDir(DIRN_UP);
+    hwInterfaceSetLastDir(DIRECTION_UP);
     elevSetMotorDir(0);
     hwInterfaceSetCurrentDir(0);                               
 

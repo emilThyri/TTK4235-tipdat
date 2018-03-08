@@ -56,13 +56,13 @@ int elevInit(void) {
     return 1;
 }
 
-void elevSetMotorDir(elev_motor_direction_t dirn) {
-    if (dirn == 0){
+void elevSetMotorDir(elev_motor_direction_t direction) {
+    if (direction == 0){
         io_write_analog(MOTOR, 0);
-    } else if (dirn > 0) {
+    } else if (direction > 0) {
         io_clear_bit(MOTORDIR);
         io_write_analog(MOTOR, 2800);
-    } else if (dirn < 0) {
+    } else if (direction < 0) {
         io_set_bit(MOTORDIR);
         io_write_analog(MOTOR, 2800);
     }

@@ -120,22 +120,22 @@ void hwInterfaceDeleteAllOrders() {
 
 void hwInterfaceSetNextFloorPriority() {
 	// Desides priority on next floor based on the current and last direction of the elevator. 
-	if (current_dir == DIRN_UP){
+	if (current_dir == DIRECTION_UP){
 		hwInterfaceGetUpstairsOrder();
 		return;
-	} else if(current_dir == DIRN_DOWN) {
+	} else if(current_dir == DIRECTION_DOWN) {
 		hwInterfaceGetDownstairsOrder();
 		return;
-	} else if(current_dir == 0 && last_dir == DIRN_UP && current_floor != 3) {
+	} else if(current_dir == 0 && last_dir == DIRECTION_UP && current_floor != 3) {
 		hwInterfaceGetUpstairsOrder();
 		return;
-	} else if(current_dir == 0 && last_dir == DIRN_DOWN && current_floor != 0) {
+	} else if(current_dir == 0 && last_dir == DIRECTION_DOWN && current_floor != 0) {
 		hwInterfaceGetDownstairsOrder();
 		return;
-	} else if(current_dir == 0 && last_dir == DIRN_UP && current_floor == 3) {
+	} else if(current_dir == 0 && last_dir == DIRECTION_UP && current_floor == 3) {
 		hwInterfaceGetDownstairsOrder();
 		return;
-	} else if(current_dir == 0 && last_dir == DIRN_DOWN && current_floor == 0) {
+	} else if(current_dir == 0 && last_dir == DIRECTION_DOWN && current_floor == 0) {
 		hwInterfaceGetUpstairsOrder();
 		return;
 	}

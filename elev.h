@@ -23,18 +23,18 @@ int elevInit(void);
   Motor direction for function elev_set_motor_direction().
 */
 typedef enum tag_elev_motor_direction { 
-    DIRN_DOWN = -1,
-    DIRN_STOP = 0,
-    DIRN_UP = 1
+    DIRECTION_DOWN = -1,
+    DIRECTION_STOP = 0,
+    DIRECTION_UP = 1
 } elev_motor_direction_t;
 
 
 
 /**
   Sets the motor direction of the elevator.
-  @param dirn New direction of the elevator.
+  @param direction New direction of the elevator.
 */
-void elevSetMotorDirection(elev_motor_direction_t dirn);
+void elevSetMotorDirection(elev_motor_direction_t direction);
 
 
 

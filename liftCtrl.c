@@ -17,12 +17,12 @@ int stateMove() {
 	hwInterfaceSetNextFloorPriority(); 
 
 	if (hwInterfaceGetNextFloor() - hwInterfaceGetCurrentFloor() > 0) { //Set dir up if next > current
-		elevSetMotorDir(DIRN_UP);
-		hwInterfaceSetCurrentDir(DIRN_UP);
+		elevSetMotorDir(DIRECTION_UP);
+		hwInterfaceSetCurrentDir(DIRECTION_UP);
 
 	} else if(hwInterfaceGetNextFloor() - hwInterfaceGetCurrentFloor() < 0) { //set dir down if next < current	
-		elevSetMotorDir(DIRN_DOWN);
-		hwInterfaceSetCurrentDir(DIRN_DOWN);
+		elevSetMotorDir(DIRECTION_DOWN);
+		hwInterfaceSetCurrentDir(DIRECTION_DOWN);
 
 	} else { //Stop motor since next is current
 		elevSetMotorDir(0);
@@ -138,12 +138,12 @@ void stateStop(){
 		//Desides if elev is going up or down if order is same as floor indicator, based on current and last_dir
 		if (hwInterfaceGetNextFloor() == hwInterfaceGetCurrentFloor())
 		{
-			if(last_dir == DIRN_UP){
+			if(last_dir == DIRECTION_UP){
 				if (hwInterfaceGetCurrentFloor() != 3){
 					hwInterfaceSetCurrentFloor(hwInterfaceGetCurrentFloor() + 1);
 				}
 			}
-			else if (last_dir == DIRN_DOWN)
+			else if (last_dir == DIRECTION_DOWN)
 			{
 				if(hwInterfaceGetCurrentFloor() != 0) {
 					hwInterfaceSetCurrentFloor(hwInterfaceGetCurrentFloor() - 1);
